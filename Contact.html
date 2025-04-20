@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Samad</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #121212, #1e1e2f);
+      color: #ffffff;
+      padding: 60px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .contact-wrapper {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      gap: 60px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(20px);
+      flex-wrap: wrap;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .left h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .left p {
+      font-size: 1rem;
+      color: #c0c0c0;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .left .details {
+      margin-top: 20px;
+    }
+
+    .left .details p {
+      margin: 10px 0;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #1b1b2b;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #6c5ce7;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: #6c5ce7;
+      color: #fff;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #a29bfe;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        flex-direction: column;
+        padding: 30px;
+      }
+
+      .left h1 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-wrapper">
+    <div class="left">
+      <h1>Let’s Connect</h1>
+      <p>Hey, I'm <strong>Samad</strong> — a creative designer from <strong>Hyderabad, India</strong>. I specialize in thumbnail design and visual content. I’m available between <strong>4 PM to 12 AM IST</strong>. Reach out and let’s work on something cool together!</p>
+      <div class="details">
+        <p><strong>Email:</strong> thumbnailsbysamad@gmail.com</p>
+        <p><strong>Instagram:</strong> @thumbnails.by.samad</p>
+        <p><strong>Availability:</strong> Mon–Sat | 4 PM – 12 AM IST</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <form action="https://formsubmit.co/thumbnailsbysamad@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourportfolio.github.io/thankyou.html">
+
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="name" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="instagram">Instagram Handle</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" />
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Tell me what you’re thinking..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

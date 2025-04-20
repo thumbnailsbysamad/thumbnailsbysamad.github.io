@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Designer Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="logo">
+    <img src="Images/Untitled_design__4_-removebg-preview.png" alt="My Logo" />
+  </div>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Contact.html">Contacts</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="mailto:thumbnailsbysamad@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <div class="left">
+      <p class="intro">Hi, I'm Samad</p>
+      <h1>I’m a Thumbnail Designer</h1>
+      <p class="description">
+        Hey there! I'm Samad, your go-to creative for jaw-dropping thumbnails and digital art. My designs grab attention and spark curiosity — let’s make your visuals pop!
+      </p>
+      <button class="btn" onclick="document.querySelector('#projects').scrollIntoView({behavior: 'smooth'})">View My Projects</button>
+    </div>
+    <div class="right">
+      <img src="Images/IMG_20250419_221849-removebg-preview-Picsart-AiImageEnhancer.png" alt="Web Designer" />
+    </div>
+  </main>
+
+  <section id="projects" class="marquee-container">
+    <h2 class="projects-heading">My Projects</h2>
+    <div class="marquee">
+      <div class="marquee-group">
+        <img src="Images/Add a heading (15).png" alt="Thumbnail 1">
+        <img src="Images/Add a heading (24).png" alt="Thumbnail 2">
+        <img src="Images/Add a subheading.png" alt="Thumbnail 3">
+        <img src="Images/I Wasn't Ready for This….png" alt="Thumbnail 4">
+        <img src="Images/BALANCE.png" alt="Thumbnail 5">
+        <img src="Images/Add a heading (11).png" alt="Thumbnail 6">
+        <img src="Images/VS.png" alt="Thumbnail 7">
+        <img src="Images/Africa's Busiest Market (1).png" alt="Thumbnail 8">
+      </div>
+      <div class="marquee-group">
+        <img src="Images/Add a heading (15).png" alt="Thumbnail 1">
+        <img src="Images/Add a heading (24).png" alt="Thumbnail 2">
+        <img src="Images/Add a subheading.png" alt="Thumbnail 3">
+        <img src="Images/I Wasn't Ready for This….png" alt="Thumbnail 4">
+        <img src="Images/BALANCE.png" alt="Thumbnail 5">
+        <img src="Images/Add a heading (11).png" alt="Thumbnail 6">
+        <img src="Images/VS.png" alt="Thumbnail 7">
+        <img src="Images/Africa's Busiest Market (1).png" alt="Thumbnail 8">
+      </div>
+    </div>
+
+    <div class="marquee-container reverse">
+      <div class="marquee reverse">
+        <div class="marquee-group">
+          <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
+          <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
+          <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
+          <img src="Images/DARK.png" alt="Thumbnail 10" />
+          <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
+          <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
+          <img src="Images/Worst.png" alt="Thumbnail 7" />
+          <img src="Images/Africa's Busiest Market (1).png" alt="Thumbnail 8" />
+        </div>
+        <div class="marquee-group">
+          <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
+          <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
+          <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
+          <img src="Images/DARK.png" alt="Thumbnail 10" />
+          <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
+          <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
+          <img src="Images/Worst.png" alt="Thumbnail 7" />
+          <img src="Images/Africa's Busiest Market (1).png" alt="Thumbnail 8" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="main-banner">
+    <img src="Images/TRY A FREE SAMPLE.png" alt="Main Banner" />
+    <a href="Contact.html">
+      <button class="banner-button">GET NOW</button>
+    </a>
+  </div>
+  
+  <h2 class="features-heading">Top Reasons to Choose Us</h2>
+  <div class="cards-container">
+    <div class="card">
+      <img src="Images/Fast_Delivery__1_-removebg-preview.png" alt="Fast Delivery" class="card-image">
+    </div>
+    <div class="card">
+      <img src="Images/Fast_Delivery__2_-removebg-preview-removebg-preview.png" alt="Multiple Designs" class="card-image">
+    </div>
+    <div class="card">
+      <img src="Images/Fast_Delivery__3_-removebg-preview.png" alt="Changes Accepted" class="card-image">
+    </div>
+  </div>
+
+  <h2 class="projects-heading">What Clients Say</h2>
+  <div class="marquee-wrapper">
+    <div class="marquee">
+      <div class="reviews-container">
+        <!-- Set of review cards -->
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Ava+Thompson&background=random" alt="Ava Thompson" />
+          <h3 class="review-name">Ava Thompson</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Spot-on thumbnails. Boosted my views!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Liam+Patel&background=random" alt="Liam Patel" />
+          <h3 class="review-name">Liam Patel</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Fast and fantastic designs!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Sophia+Nguyen&background=random" alt="Sophia Nguyen" />
+          <h3 class="review-name">Sophia Nguyen</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Super crisp and professional work.</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Ethan+Garcia&background=random" alt="Ethan Garcia" />
+          <h3 class="review-name">Ethan Garcia</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Creative, fast, and reliable!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Isabella+Martin&background=random" alt="Isabella Martin" />
+          <h3 class="review-name">Isabella Martin</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Loved the quality of work. Great value!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Noah+Kim&background=random" alt="Noah Kim" />
+          <h3 class="review-name">Noah Kim</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Uplifted my entire channel's look.</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Ava+Thompson&background=random" alt="Ava Thompson" />
+          <h3 class="review-name">Ava Thompson</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Spot-on thumbnails. Boosted my views!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Liam+Patel&background=random" alt="Liam Patel" />
+          <h3 class="review-name">Liam Patel</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Fast and fantastic designs!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Sophia+Nguyen&background=random" alt="Sophia Nguyen" />
+          <h3 class="review-name">Sophia Nguyen</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Super crisp and professional work.</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Ethan+Garcia&background=random" alt="Ethan Garcia" />
+          <h3 class="review-name">Ethan Garcia</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Creative, fast, and reliable!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Isabella+Martin&background=random" alt="Isabella Martin" />
+          <h3 class="review-name">Isabella Martin</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Loved the quality of work. Great value!</p>
+        </div>
+        <div class="review-card">
+          <img src="https://ui-avatars.com/api/?name=Noah+Kim&background=random" alt="Noah Kim" />
+          <h3 class="review-name">Noah Kim</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Uplifted my entire channel's look.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-about">
+        <h2>Samad</h2>
+        <p>Creative Designer | Delivering eye-catching visuals fast & flawlessly.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Email: thumbnailsbysamad@gmail.com</p>
+        <p>Location: Hyderabad,India</p>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <div class="footer-social">
+            <div class="social-icons">
+              <a href="mailto:thumbnailsbysamad@gmail.com"><i class="fas fa-envelope"></i></a>
+              <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 thumbnailsbysamad. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

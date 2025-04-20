@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Samad | Thumbnail Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f5f2;
+      color: #1a1a1a;
+    }
+
+    .about-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .intro-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .intro-header h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+    }
+
+    .intro-header p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .left-section, .right-section {
+      flex: 1 1 400px;
+    }
+
+    .left-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .signature {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #a56c43;
+      margin: 20px 0;
+    }
+
+    .desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .skills {
+      margin-top: 20px;
+    }
+
+    .skills h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills li {
+      background: #e8e3df;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .right-section img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: transparent;
+    }
+
+    .testimonial {
+      background-color: #fff;
+      border-left: 4px solid #a56c43;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-by {
+      text-align: right;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #a56c43;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: #8b5533;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .skills ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="about-wrapper">
+    <div class="intro-header">
+      <h1>Hey, I'm Samad</h1>
+      <p>A passionate Thumbnail Designer crafting scroll-stopping visuals for content creators</p>
+    </div>
+
+    <div class="about-content">
+      <div class="left-section">
+        <h2>I Love Bringing Ideas to Life</h2>
+        <p class="signature">Samad</p>
+
+        <p class="desc">
+          As a dedicated Thumbnail Designer, I help YouTubers and digital creators make their videos pop with bold, click-worthy designs. From rapid delivery to tailored revisions — I’ve got your creative back.
+        </p>
+
+        <p class="desc">
+          Whether it's working with bold typography, vibrant imagery, or experimenting with layouts — I bring energy and clarity to every thumbnail I touch.
+        </p>
+
+        <div class="skills">
+          <h3>What I’m Good At:</h3>
+          <ul>
+            <li>Thumbnail Design</li>
+            <li>Photoshop</li>
+            <li>Canva Pro</li>
+            <li>Branding</li>
+            <li>Fast Delivery</li>
+            <li>Creative Direction</li>
+          </ul>
+        </div>
+
+        <a href="Contact.html" class="contact-btn">Let's Work Together</a>
+
+      </div>
+
+      <div class="right-section">
+        <img src="Images/IMG_20250419_221849-removebg-preview-Picsart-AiImageEnhancer.png" alt="Samad's photo" />
+
+        <div class="testimonial">
+          “ Samad’s designs helped boost our CTR by 30%! He totally gets what grabs attention and works fast. ”
+          <div class="testimonial-by">— A Happy Client</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
