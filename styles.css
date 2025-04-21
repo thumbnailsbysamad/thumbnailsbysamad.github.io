@@ -31,11 +31,30 @@ body, html {
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  padding: 20px 950px;
+  padding: 20px 40px; /* Reduced padding for all screens */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar .logo {
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .logo img {
@@ -124,6 +143,12 @@ h1 {
   margin-bottom: 30px;
   max-width: 400px;
 }
+
+.projects-heading {
+  align-self: flex-start;
+  padding-left: 40px;
+}
+
 
 .btn {
   padding: 12px 30px;
