@@ -39,10 +39,12 @@ body, html {
 }
 
 .logo img {
-  height: 100px;
-  padding-top: 10px;
+  height: 180px;
+  width: 180px;
+  margin-top: -30px; 
   padding-left: 20px;
 }
+
 
 .nav-right {
   display: flex;
@@ -177,19 +179,19 @@ h1 {
   z-index: 1;
 }
 
-/* Marquee Section */
 .marquee-container {
   overflow: hidden;
   background-color: transparent;
   padding: 40px 0;
-  margin-top: 0px;
+  margin-top: 0;
   position: relative;
+  width: 100%;
 }
 
 .marquee {
   display: flex;
+  width: fit-content;
   animation: scroll 25s linear infinite;
-  width: max-content;
 }
 
 .marquee-group {
@@ -213,7 +215,7 @@ h1 {
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
 }
 
 .marquee-container:hover .marquee {
