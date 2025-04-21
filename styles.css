@@ -31,11 +31,11 @@ body, html {
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  padding: 20px 40px; /* Reduced padding for all screens */
+  padding: 20px 1000px;/* padding for all screens */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: transparent;
 }
 
 /* Responsive adjustments */
@@ -61,7 +61,7 @@ body, html {
   height: 180px;
   width: 180px;
   margin-top: -30px; 
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 
@@ -94,7 +94,7 @@ body, html {
   display: flex;
   gap: 25px;
   font-size: 2.5rem;
-  padding-left: 30px;
+  padding-left: 60px;
   color: #fff;
 }
 
