@@ -77,33 +77,33 @@
         <img src="Images/Africa's Busiest Market (1).png" alt="Thumbnail 8">
       </div>
     </div>
+  </section> <!-- Close the first marquee container section here -->
 
-    <!-- This div should be outside the previous marquee section to avoid nested marquee containers directly -->
-    <div class="marquee-container reverse">
-      <div class="marquee reverse">
-        <div class="marquee-group">
-          <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
-          <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
-          <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
-          <img src="Images/DARK.png" alt="Thumbnail 10" />
-          <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
-          <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
-          <img src="Images/Worst.png" alt="Thumbnail 7" />
-          <img src="Images/Add a heading (27).png" alt="Thumbnail 8" />
-        </div>
-        <div class="marquee-group">
-          <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
-          <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
-          <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
-          <img src="Images/DARK.png" alt="Thumbnail 10" />
-          <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
-          <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
-          <img src="Images/Worst.png" alt="Thumbnail 7" />
-          <img src="Images/Add a heading (27).png" alt="Thumbnail 8" />
-        </div>
+  <!-- This is now a separate div, not nested -->
+  <div class="marquee-container reverse">
+    <div class="marquee reverse">
+      <div class="marquee-group">
+        <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
+        <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
+        <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
+        <img src="Images/DARK.png" alt="Thumbnail 10" />
+        <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
+        <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
+        <img src="Images/Worst.png" alt="Thumbnail 7" />
+        <img src="Images/Add a heading (27).png" alt="Thumbnail 8" />
+      </div>
+      <div class="marquee-group">
+        <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
+        <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
+        <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
+        <img src="Images/DARK.png" alt="Thumbnail 10" />
+        <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
+        <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
+        <img src="Images/Worst.png" alt="Thumbnail 7" />
+        <img src="Images/Add a heading (27).png" alt="Thumbnail 8" />
       </div>
     </div>
-  </section>
+  </div>
 
   <div class="main-banner">
     <img src="Images/TRY A FREE SAMPLE.png" alt="Main Banner" />
@@ -117,19 +117,26 @@
     <div class="cards-container">
       <div class="card">
         <img src="Images/Fast_Delivery__1_-removebg-preview.png" alt="Fast Delivery" class="card-image">
+        <!-- Optional: Add text content for card description, if needed -->
+        <!-- <h3>Fast Delivery</h3>
+        <p>Get your designs quickly and efficiently.</p> -->
       </div>
       <div class="card">
         <img src="Images/Fast_Delivery__2_-removebg-preview-removebg-preview.png" alt="Multiple Designs" class="card-image">
+        <!-- <h3>Multiple Designs</h3>
+        <p>Choose from a variety of creative options.</p> -->
       </div>
       <div class="card">
         <img src="Images/Fast_Delivery__3_-removebg-preview.png" alt="Changes Accepted" class="card-image">
+        <!-- <h3>Changes Accepted</h3>
+        <p>Your satisfaction is our priority, revisions welcome.</p> -->
       </div>
     </div>
   </section>
 
   <h2 class="reviews-heading">What Clients Say</h2> <!-- Class name updated -->
   <div class="marquee-wrapper">
-    <div class="marquee">
+    <div class="marquee"> <!-- This div is crucial for the review marquee to scroll -->
       <div class="reviews-container">
         <!-- Set of review cards -->
         <div class="review-card">
@@ -168,6 +175,7 @@
           <div class="stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Uplifted my entire channel's look.</p>
         </div>
+        <!-- Duplicate set for continuous scroll -->
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Ava+Thompson&background=random" alt="Ava Thompson" />
           <h3 class="review-name">Ava Thompson</h3>
@@ -250,7 +258,7 @@
         const hamburger = document.getElementById('hamburger');
         const body = document.body;
         const navLinks = document.querySelectorAll('.nav-links li a'); // Select all nav links
-        const socialIcons = document.querySelectorAll('.social-icons a'); // Select all social icons in nav
+        const navSocialIcons = document.querySelector('.nav-right .social-icons').querySelectorAll('a'); // Select social icons only within nav-right
 
         hamburger.addEventListener('click', function() {
             body.classList.toggle('nav-active');
@@ -265,8 +273,8 @@
             });
         });
 
-        // Close menu when a social icon in the nav is clicked (if applicable, or simply for consistency)
-        socialIcons.forEach(icon => {
+        // Close menu when a social icon in the nav is clicked
+        navSocialIcons.forEach(icon => {
             icon.addEventListener('click', function() {
                 if (body.classList.contains('nav-active')) {
                     body.classList.remove('nav-active');
