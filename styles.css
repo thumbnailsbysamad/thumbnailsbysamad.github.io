@@ -7,7 +7,7 @@
 
 html {
   box-sizing: border-box;
-  overflow-x: hidden; /* Prevent horizontal scroll from content */
+  overflow-x: hidden;
   scroll-behavior: smooth; /* Smooth scroll for anchor links */
 }
 
@@ -23,7 +23,7 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden; /* Crucial for preventing body overflow */
   width: 100%;
-  position: relative; /* For potential overlay menus */
+  position: relative; /* For the menu overlay */
 }
 
 /* Navbar */
@@ -33,41 +33,46 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: transparent; /* Keep it transparent */
+  background-color: transparent;
   padding: 20px 40px;
   display: flex;
-  justify-content: space-between; /* Space between logo and right section */
+  justify-content: space-between; /* Space between logo and right section/hamburger */
   align-items: center;
-  transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for potential sticky effect */
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  box-shadow: none; /* Reverted */
 }
 
 /* Optional: Add a background color to the navbar on scroll using JS to add a class */
 .navbar.scrolled {
-  background-color: rgba(17, 17, 17, 0.9); /* Slightly darker, semi-transparent */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(17, 17, 17, 0.9); /* Original dark semi-transparent */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow on scroll */
   padding: 15px 40px;
 }
 
 .logo img {
-  height: 100px; /* Reduced for better fit in navbar */
-  width: auto; /* Maintain aspect ratio */
-  vertical-align: middle; /* Align image nicely */
+  height: 170px; /* Reverted to original height */
+  width: auto;
+  margin-top: 0;
+  padding-left: 0;
   transition: height 0.3s ease; /* Smooth transition for logo size on scroll */
 }
 
 .navbar.scrolled .logo img {
-  height: 70px; /* Smaller logo when scrolled */
+  height: 120px; /* Slightly smaller logo when scrolled, keep a bit large for impact */
 }
+
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 30px;
+  /* Removed margin-left: auto; as justify-content handles spacing now */
 }
 
 .nav-links {
-  list-style: none;
+  position: relative;
   display: flex;
+  list-style: none;
   gap: 30px;
   margin: 0;
   padding: 0;
@@ -78,28 +83,29 @@ body {
   color: #fff;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
 .nav-links li a:hover {
-  color: #6a0dad; /* Purple hover color */
+  color: #6a0dad;
 }
 
 .social-icons {
   display: flex;
   gap: 25px;
-  font-size: 1.8rem; /* Slightly reduced for better fit */
+  font-size: 2.5rem; /* Reverted to original size */
+  margin-left: 30px; /* Reverted to original margin */
   align-items: center;
   color: #fff;
 }
 
 .social-icons i {
-  color: white;
-  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  color: white; /* Reverted to original color */
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .social-icons i:hover {
-  color: #6a0dad; /* Purple hover for social icons */
+  color: white; /* Reverted to original color */
   transform: scale(1.2);
   opacity: 0.8;
 }
@@ -113,7 +119,7 @@ body {
   height: 20px;
   cursor: pointer;
   z-index: 1100; /* Above nav-right */
-  position: relative; /* For absolute positioning of bars */
+  position: relative;
 }
 
 .hamburger-menu .bar {
@@ -142,72 +148,75 @@ body.nav-active .hamburger-menu .bar:nth-child(3) {
   justify-content: space-between;
   padding: 180px 60px 60px; /* Adjusted padding-top to account for fixed navbar */
   flex-wrap: wrap;
-  gap: 40px; /* Added gap for spacing between left/right on wrap */
 }
 
 .left {
-  flex: 1; /* Allow left to grow */
   max-width: 50%;
-  min-width: 300px; /* Ensures minimum width even if flex shrinks */
+  min-width: 300px;
 }
 
 .intro {
-  font-size: 1rem; /* Slightly increased for readability */
+  font-size: 0.9rem; /* Reverted */
   color: #aaa;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 h1 {
-  font-size: 3.8rem; /* Slightly increased */
+  font-size: 3.5rem; /* Reverted */
   font-weight: 800;
   margin-bottom: 20px;
-  line-height: 1.2;
 }
 
 .description {
-  font-size: 1.1rem; /* Slightly increased */
+  font-size: 1rem; /* Reverted */
   color: #aaa;
   margin-bottom: 30px;
-  max-width: 500px; /* Adjusted max-width */
-  line-height: 1.6;
+  max-width: 400px; /* Reverted */
+}
+
+.projects-heading, .features-heading, .reviews-heading { /* Grouped for consistency */
+  align-self: flex-start;
+  padding-left: 40px;
+  font-size: 2.5rem; /* Reverted to original features heading size */
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #fff;
+  padding-top: 60px;
 }
 
 .btn {
-  padding: 14px 35px; /* Slightly larger padding */
+  padding: 12px 30px; /* Reverted */
   border: 2px solid white;
   background-color: white;
   color: black;
   border-radius: 30px;
   font-weight: bold;
-  font-size: 1.15rem; /* Slightly larger font */
+  font-size: 1.1rem; /* Reverted */
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4); /* Enhanced shadow */
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3); /* Reverted */
 }
 
 .btn:hover {
-  background-color: #6a0dad; /* Purple hover color */
-  border-color: #6a0dad;
+  background-color: grey; /* Reverted */
   color: white;
-  transform: translateY(-5px); /* More pronounced lift */
-  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6); /* More pronounced shadow */
+  transform: translateY(-3px); /* Reverted */
+  box-shadow: none; /* Reverted */
 }
 
 .btn:focus {
   outline: none;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
 }
 
 .right {
-  flex: 1; /* Allow right to grow */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 300px; /* Ensure minimum width */
 }
 
 .right::before {
@@ -216,35 +225,27 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%; /* Reduced width */
-  height: 100%; /* Reduced height */
-  background: radial-gradient(circle, rgba(193, 200, 202, 0.2), transparent 70%); /* Lighter, more subtle */
-  filter: blur(80px); /* Increased blur */
+  width: 120%; /* Reverted */
+  height: 120%; /* Reverted */
+  background: radial-gradient(circle, rgba(193, 200, 202, 0.3), transparent 70%); /* Reverted */
+  filter: blur(50px); /* Reverted */
   z-index: 0;
 }
 
 .right img {
-  max-width: 100%; /* Ensure image fits container */
-  height: auto;
+  width: 620px; /* Reverted */
   border-radius: 10px;
   position: relative;
   z-index: 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Added subtle shadow */
+  box-shadow: none; /* Removed */
 }
 
 /* Marquee Sections */
-.projects-heading, .features-heading, .reviews-heading {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #fff;
-  padding: 60px 40px 30px; /* Consistent padding */
-  text-align: left; /* Default alignment */
-}
-
 .marquee-container {
   overflow: hidden;
   background-color: transparent;
   padding: 40px 0;
+  margin-top: 0;
   position: relative;
   width: 100%;
 }
@@ -252,28 +253,28 @@ h1 {
 .marquee {
   display: flex;
   width: fit-content;
-  animation: scroll 30s linear infinite; /* Adjusted speed */
+  animation: scroll 25s linear infinite; /* Reverted */
 }
 
 .marquee-group {
   display: flex;
-  gap: 30px; /* Increased gap */
-  padding: 0 30px; /* Padding for start/end of group */
+  gap: 20px; /* Reverted */
+  padding-left: 30px;
   flex-shrink: 0;
 }
 
 .marquee-group img {
-  width: 450px; /* Slightly larger image size */
-  height: 250px; /* Maintain aspect ratio */
+  width: 400px; /* Reverted */
+  height: 225px; /* Reverted */
   object-fit: cover;
-  border-radius: 12px; /* Slightly larger border radius */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: none; /* Removed */
 }
 
 .marquee-group img:hover {
-  transform: scale(1.03) translateY(-5px); /* Lift and scale slightly */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+  transform: scale(1.05); /* Reverted */
+  box-shadow: none; /* Removed */
 }
 
 @keyframes scroll {
@@ -296,7 +297,7 @@ h1 {
 .marquee.reverse {
   display: flex;
   width: max-content;
-  animation: scroll-left-to-right 30s linear infinite; /* Adjusted speed */
+  animation: scroll-left-to-right 25s linear infinite; /* Reverted */
 }
 
 @keyframes scroll-left-to-right {
@@ -305,114 +306,113 @@ h1 {
 }
 
 .marquee-container.reverse .marquee-group img {
-  width: 450px;
-  height: 250px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  width: 400px; /* Reverted */
+  height: 225px; /* Reverted */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: none; /* Removed */
 }
 
 .marquee-container.reverse .marquee-group img:hover {
-  transform: scale(1.03) translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05); /* Reverted */
+  box-shadow: none; /* Removed */
 }
-
 
 /* Main Banner */
 .main-banner {
   width: 100%;
-  padding: 0 40px; /* Consistent padding */
+  padding: 0 10px; /* Reverted */
   position: relative;
   overflow: hidden;
-  margin-top: 80px; /* Added margin-top for spacing */
+  margin-top: 0; /* Reverted */
 }
 
 .main-banner img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 15px; /* Slightly larger border-radius */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Added shadow */
+  border-radius: 10px; /* Reverted */
+  box-shadow: none; /* Removed */
 }
 
 .banner-button {
   position: absolute;
-  bottom: 50px; /* Adjusted position */
-  right: 80px; /* Adjusted position */
-  padding: 14px 35px; /* Matches main btn */
-  font-size: 1.15rem; /* Matches main btn */
+  bottom: 40px; /* Reverted */
+  right: 130px; /* Reverted */
+  padding: 12px 30px; /* Reverted */
+  font-size: 1rem; /* Reverted */
   background: transparent;
-  border: 2px solid #800080; /* Purple border */
-  border-radius: 30px; /* Rounded corners */
+  border: 2px solid #800080; /* Reverted to purple border as it was in original */
+  border-radius: 8px; /* Reverted */
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
   z-index: 10;
-  text-transform: uppercase;
+  text-transform: none; /* Reverted */
 }
 
 .banner-button:hover {
-  background: #800080;
+  background: #800080; /* Reverted to purple background as it was in original */
   color: white;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(128, 0, 128, 0.6); /* Purple shadow */
+  transform: none; /* Reverted */
+  box-shadow: none; /* Removed */
 }
 
 /* Cards */
 .cards-container {
   display: flex;
-  justify-content: center; /* Center cards initially */
-  gap: 30px; /* Added gap */
+  justify-content: space-between; /* Reverted */
   margin-top: 80px;
-  padding: 0 40px; /* Consistent padding */
-  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  padding: 0 10px; /* Reverted */
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .card {
   background-color: transparent;
-  padding: 25px; /* Slightly more padding */
-  border-radius: 12px; /* Consistent border-radius */
-  width: calc(33.33% - 20px); /* Adjust width to account for gap */
+  padding: 20px; /* Reverted */
+  border-radius: 8px; /* Reverted */
+  width: 30%; /* Reverted */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 280px; /* Ensure cards don't get too small before wrapping */
+  min-width: 280px; /* Added for mobile card sizing */
 }
 
 .card-image {
   width: 100%;
-  height: 200px; /* Fixed height for consistent image size */
-  object-fit: cover; /* Ensure image covers the area */
-  border-radius: 10px;
-  margin-bottom: 20px; /* Increased margin */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: auto; /* Reverted */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: none; /* Removed */
 }
 
-.card h3 {
-  font-size: 1.5rem;
+.card h3 { /* Added for potential card titles */
+  font-size: 1.2rem;
   margin-bottom: 10px;
   color: #fff;
 }
 
-.card p {
-  font-size: 1rem;
+.card p { /* Added for potential card text */
+  font-size: 0.9rem;
   color: #ccc;
   line-height: 1.5;
 }
 
+
 .card:hover {
-  transform: translateY(-12px); /* More pronounced lift */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  background-color: rgba(30, 30, 30, 0.5); /* Subtle background on hover */
+  transform: translateY(-10px); /* Reverted */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Reverted */
+  background-color: transparent; /* Reverted */
 }
 
 /* Reviews */
-.reviews-heading {
-  font-size: 2.8rem;
+.reviews-heading { /* Renamed from .projects-heading for clarity */
+  font-size: 2.5rem; /* Consistent with other headings */
   font-weight: bold;
+  margin-bottom: 30px;
   color: #fff;
-  padding: 60px 40px 30px;
-  text-align: left;
+  padding-top: 60px;
+  padding-left: 80px; /* Reverted */
 }
 
 .marquee-wrapper {
@@ -421,98 +421,102 @@ h1 {
   background-color: #111;
   padding: 40px 0;
   position: relative;
-  /* Use the same scroll animation for reviews, perhaps with different speed */
 }
 
 .reviews-container {
   display: flex;
   gap: 30px;
   animation: scroll-loop 40s linear infinite; /* Slower loop for reviews */
-  width: fit-content; /* Ensure container is wide enough for animation */
-  padding: 0 40px; /* Padding for first/last card */
+  width: fit-content;
+  padding: 0 40px; /* Added for spacing */
 }
 
 .marquee-wrapper:hover .reviews-container {
   animation-play-state: paused;
 }
 
+
 .review-card {
   flex: 0 0 auto;
-  min-width: 280px; /* Adjusted minimum width */
-  max-width: 320px; /* Adjusted maximum width */
+  width: 250px; /* Reverted */
   background-color: #1e1e1e;
   color: white;
-  padding: 25px; /* More padding */
+  padding: 20px; /* Reverted */
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Reverted */
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .review-card:hover {
-  transform: scale(1.03) translateY(-8px); /* Lift and scale slightly */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* More pronounced shadow */
+  transform: scale(1.05); /* Reverted */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Reverted */
 }
 
 .review-card img {
-  width: 70px; /* Slightly larger image */
-  height: 70px; /* Slightly larger image */
+  width: 60px; /* Reverted */
+  height: 60px; /* Reverted */
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px; /* More margin */
-  border: 3px solid #6a0dad; /* Purple border for profile pics */
+  margin-bottom: 10px; /* Reverted */
+  border: none; /* Removed purple border */
 }
 
 .review-name {
-  font-size: 1.1rem; /* Slightly larger */
+  font-size: 1rem; /* Reverted */
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .stars {
   color: gold;
-  margin-bottom: 12px;
-  font-size: 1.2rem; /* Slightly larger stars */
+  margin-bottom: 10px;
+  font-size: 1rem; /* Reverted */
 }
 
 .review-text {
-  font-size: 0.95rem; /* Slightly larger */
-  line-height: 1.5;
+  font-size: 0.9rem; /* Reverted */
+  line-height: 1.4;
   color: #ccc;
+}
+
+@keyframes scroll-loop {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Footer */
 .footer {
   background-color: #111;
   color: #fff;
-  padding: 80px 40px 30px; /* Increased padding */
+  padding: 60px 30px 20px; /* Reverted */
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 50px; /* Increased gap */
+  gap: 40px; /* Reverted */
   max-width: 1200px;
   margin: auto;
 }
 
-.footer-section {
-  flex: 1; /* Allow sections to grow */
-  min-width: 200px; /* Ensure minimum width before wrapping */
+.footer-section { /* Added class for consistency */
+    flex: 1;
+    min-width: 200px;
 }
 
 .footer-content h2,
 .footer-content h3 {
-  margin-bottom: 20px; /* Increased margin */
+  margin-bottom: 15px; /* Reverted */
   font-weight: 600;
-  font-size: 1.4rem; /* Slightly larger heading */
+  font-size: 1.2rem; /* Reverted */
 }
 
 .footer-content p,
 .footer-content ul li a {
   color: #ccc;
-  font-size: 15px; /* Slightly larger font */
+  font-size: 14px; /* Reverted */
   line-height: 1.8;
   text-decoration: none;
 }
@@ -523,26 +527,26 @@ h1 {
 }
 
 .footer-links ul li {
-  margin-bottom: 12px; /* Increased margin */
+  margin-bottom: 10px; /* Reverted */
 }
 
 .footer-social .social-icons a {
   color: #ccc;
-  font-size: 22px; /* Slightly larger icons */
-  margin-right: 20px; /* Increased margin */
+  font-size: 20px; /* Reverted */
+  margin-right: 15px; /* Reverted */
   transition: color 0.3s ease;
 }
 
 .footer-social .social-icons a:hover {
-  color: #6a0dad; /* Purple hover */
+  color: #fff;
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 60px; /* Increased margin */
+  margin-top: 40px; /* Reverted */
   border-top: 1px solid #333;
-  padding-top: 25px; /* Increased padding */
-  font-size: 15px; /* Slightly larger font */
+  padding-top: 15px; /* Reverted */
+  font-size: 14px; /* Reverted */
   color: #777;
 }
 
@@ -551,62 +555,44 @@ h1 {
   .hero {
     padding: 160px 40px 60px;
   }
-
   .left, .right {
     max-width: 100%;
     text-align: center;
   }
-
-  h1 {
-    font-size: 3.2rem;
-  }
-
   .description {
-    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
-
-  .right img {
-    max-width: 80%;
-  }
-
   .cards-container {
     padding: 0 30px;
     gap: 20px;
   }
-
   .card {
     width: calc(50% - 15px); /* Two cards per row */
   }
-
   .footer-content {
     gap: 30px;
   }
-
   .footer-section {
     flex-basis: calc(50% - 15px); /* Two columns */
   }
 }
 
-
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
-    justify-content: space-between; /* Ensure logo and hamburger are spaced */
+    justify-content: space-between; /* Keep logo and hamburger spaced */
   }
 
   .navbar .logo img {
-    height: 80px; /* Adjust logo size for smaller screens */
+    height: 100px; /* Adjusted size for mobile */
   }
   .navbar.scrolled .logo img {
-    height: 60px;
+    height: 70px;
   }
 
   .nav-right {
-    /* Hidden by default on mobile, managed by hamburger menu */
-    display: none;
-    flex-direction: column;
+    /* Hamburger menu control */
     position: fixed;
     top: 0;
     right: -100%; /* Start off-screen */
@@ -616,21 +602,28 @@ h1 {
     background-color: #1a1a1a; /* Dark background for menu */
     padding: 80px 20px 20px;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-    transition: right 0.4s ease-in-out;
+    transition: right 0.4s ease-in-out, visibility 0s 0.4s, opacity 0.4s ease-in-out; /* Crucial for animation */
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 40px;
-    z-index: 1050; /* Above regular content but below hamburger toggle */
+    z-index: 1050;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevent clicks when hidden */
   }
 
   body.nav-active .nav-right {
     right: 0; /* Slide in */
-    display: flex; /* Make sure it's flex when active */
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto; /* Allow clicks when visible */
+    transition: right 0.4s ease-in-out, visibility 0s, opacity 0.4s ease-in-out; /* No delay on visibility when active */
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 25px; /* Spacing for menu items */
+    gap: 25px;
     width: 100%;
   }
 
@@ -643,8 +636,9 @@ h1 {
 
   .social-icons {
     font-size: 2rem;
-    margin-top: 30px; /* Space from nav links */
+    margin-top: 30px;
     gap: 20px;
+    margin-left: 0; /* Align with nav links */
     justify-content: flex-start;
   }
 
@@ -666,7 +660,7 @@ h1 {
 
   .hero {
     flex-direction: column;
-    padding: 120px 20px 40px; /* Adjust top padding for sticky navbar */
+    padding: 120px 20px 40px;
   }
 
   .left {
@@ -675,37 +669,38 @@ h1 {
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem; /* Reverted to closer to original mobile size */
   }
 
   .description {
-    font-size: 1rem;
-    max-width: 90%; /* Ensure text wraps well */
+    font-size: 0.95rem; /* Reverted */
+    max-width: 90%;
   }
 
   .btn {
-    font-size: 1rem;
-    padding: 10px 25px;
+    font-size: 0.95rem; /* Reverted */
+    padding: 10px 20px; /* Reverted */
   }
 
   .right {
-    margin-top: 30px; /* Space between text and image */
+    margin-top: 30px;
   }
 
   .right img {
-    max-width: 95%; /* Adjust image size */
+    width: 100%; /* Reverted */
   }
 
   .projects-heading, .features-heading, .reviews-heading {
-    font-size: 2.2rem;
+    font-size: 2.2rem; /* Reverted */
     padding: 40px 20px 20px;
     text-align: center; /* Center headings on mobile */
+    padding-left: 20px; /* Reverted */
   }
 
   .marquee-group img,
   .marquee-container.reverse .marquee-group img {
-    width: 350px; /* Smaller images for marquee */
-    height: 200px;
+    width: 300px; /* Reverted */
+    height: 170px; /* Reverted */
   }
 
   .main-banner {
@@ -713,27 +708,26 @@ h1 {
   }
 
   .banner-button {
-    bottom: 25px; /* Adjusted position */
-    right: 25px; /* Adjusted position */
-    font-size: 0.9rem;
-    padding: 10px 20px;
+    right: 20px; /* Reverted */
+    bottom: 20px; /* Reverted */
+    font-size: 0.9rem; /* Reverted */
+    padding: 10px 20px; /* Reverted */
   }
 
   .cards-container {
     flex-direction: column;
     align-items: center;
     padding: 0 20px;
-    gap: 30px;
+    gap: 20px; /* Reverted */
   }
 
   .card {
-    width: 90%; /* Full width cards */
-    min-width: unset; /* Remove min-width constraint */
+    width: 90%; /* Reverted */
   }
 
   .review-card {
-    min-width: 250px;
-    max-width: 280px;
+    min-width: 250px; /* Reverted */
+    max-width: 250px; /* Reverted */
   }
 
   .footer {
@@ -747,8 +741,7 @@ h1 {
   }
 
   .footer-section {
-    width: 100%; /* Full width sections */
-    min-width: unset;
+    width: 100%;
   }
 
   .footer-bottom {
@@ -764,39 +757,26 @@ h1 {
   }
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 2rem; /* Reverted */
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Reverted */
   }
 
   .btn {
-    font-size: 0.9rem;
-    padding: 8px 18px;
+    font-size: 0.9rem; /* Reverted */
+    padding: 8px 18px; /* Reverted */
   }
 
   .marquee-group img,
   .marquee-container.reverse .marquee-group img {
-    width: 280px; /* Even smaller images */
-    height: 160px;
+    width: 250px; /* Reverted */
+    height: 140px; /* Reverted */
   }
 
   .banner-button {
-    font-size: 0.8rem;
-    padding: 8px 15px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .review-card {
-    min-width: 220px;
-    max-width: 250px;
-  }
-
-  .reviews-heading {
-    font-size: 2rem;
+    font-size: 0.8rem; /* Reverted */
+    padding: 8px 15px; /* Reverted */
   }
 }
