@@ -1,3 +1,4 @@
+/* Universal Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,79 +7,67 @@
 
 html {
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll from content */
+  scroll-behavior: smooth; /* Smooth scroll for anchor links */
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-body, html {
+body {
   margin: 0;
   padding: 0;
   background-color: #111;
   color: white;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Crucial for preventing body overflow */
   width: 100%;
+  position: relative; /* For potential overlay menus */
 }
 
-
+/* Navbar */
 .navbar {
   position: fixed;
-  top: 25px;
+  top: 0; /* Changed from 25px for better mobile integration and sticky behavior */
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: transparent;
-  padding: 20px 40px; 
+  background-color: transparent; /* Keep it transparent */
+  padding: 20px 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* Space between logo and right section */
   align-items: center;
-  box-shadow: none;
+  transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for potential sticky effect */
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 15px 20px;
-  }
-
-  .navbar .logo {
-    margin-bottom: 10px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .social-icons {
-    margin-top: 10px;
-    padding-left: 0;
-  }
+/* Optional: Add a background color to the navbar on scroll using JS to add a class */
+.navbar.scrolled {
+  background-color: rgba(17, 17, 17, 0.9); /* Slightly darker, semi-transparent */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px 40px;
 }
 
 .logo img {
-  height: 170px;
-  width: 170px;
-  margin-top: 0; 
-  padding-left: 0; 
+  height: 100px; /* Reduced for better fit in navbar */
+  width: auto; /* Maintain aspect ratio */
+  vertical-align: middle; /* Align image nicely */
+  transition: height 0.3s ease; /* Smooth transition for logo size on scroll */
 }
 
+.navbar.scrolled .logo img {
+  height: 70px; /* Smaller logo when scrolled */
+}
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-left: auto;
 }
 
 .nav-links {
-  position: relative;
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 30px;
   margin: 0;
   padding: 0;
@@ -89,31 +78,61 @@ body, html {
   color: #fff;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #6a0dad;
+  color: #6a0dad; /* Purple hover color */
 }
 
 .social-icons {
   display: flex;
   gap: 25px;
-  font-size: 2.5rem;
-  margin-left: 30px;
+  font-size: 1.8rem; /* Slightly reduced for better fit */
   align-items: center;
   color: #fff;
 }
 
 .social-icons i {
   color: white;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
 }
 
 .social-icons i:hover {
-  color: white;
+  color: #6a0dad; /* Purple hover for social icons */
   transform: scale(1.2);
   opacity: 0.8;
+}
+
+/* HAMBURGER MENU */
+.hamburger-menu {
+  display: none; /* Hidden by default on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100; /* Above nav-right */
+  position: relative; /* For absolute positioning of bars */
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animation for close button */
+body.nav-active .hamburger-menu .bar:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+body.nav-active .hamburger-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+body.nav-active .hamburger-menu .bar:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -121,74 +140,74 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px;
+  padding: 180px 60px 60px; /* Adjusted padding-top to account for fixed navbar */
   flex-wrap: wrap;
-  padding-top: 120px;
+  gap: 40px; /* Added gap for spacing between left/right on wrap */
 }
 
 .left {
+  flex: 1; /* Allow left to grow */
   max-width: 50%;
-  min-width: 300px;
+  min-width: 300px; /* Ensures minimum width even if flex shrinks */
 }
 
 .intro {
-  font-size: 0.9rem;
+  font-size: 1rem; /* Slightly increased for readability */
   color: #aaa;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem; /* Slightly increased */
   font-weight: 800;
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.1rem; /* Slightly increased */
   color: #aaa;
   margin-bottom: 30px;
-  max-width: 400px;
+  max-width: 500px; /* Adjusted max-width */
+  line-height: 1.6;
 }
-
-.projects-heading {
-  align-self: flex-start;
-  padding-left: 40px;
-}
-
 
 .btn {
-  padding: 12px 30px;
+  padding: 14px 35px; /* Slightly larger padding */
   border: 2px solid white;
   background-color: white;
   color: black;
   border-radius: 30px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.15rem; /* Slightly larger font */
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4); /* Enhanced shadow */
 }
 
 .btn:hover {
-  background-color: grey;
+  background-color: #6a0dad; /* Purple hover color */
+  border-color: #6a0dad;
   color: white;
-  transform: translateY(-3px);
-  box-shadow: none;
+  transform: translateY(-5px); /* More pronounced lift */
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6); /* More pronounced shadow */
 }
 
 .btn:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
 }
 
 .right {
+  flex: 1; /* Allow right to grow */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 300px; /* Ensure minimum width */
 }
 
 .right::before {
@@ -197,25 +216,35 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(193, 200, 202, 0.3), transparent 70%);
-  filter: blur(50px);
+  width: 100%; /* Reduced width */
+  height: 100%; /* Reduced height */
+  background: radial-gradient(circle, rgba(193, 200, 202, 0.2), transparent 70%); /* Lighter, more subtle */
+  filter: blur(80px); /* Increased blur */
   z-index: 0;
 }
 
 .right img {
-  width: 620px;
+  max-width: 100%; /* Ensure image fits container */
+  height: auto;
   border-radius: 10px;
   position: relative;
   z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Added subtle shadow */
+}
+
+/* Marquee Sections */
+.projects-heading, .features-heading, .reviews-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 60px 40px 30px; /* Consistent padding */
+  text-align: left; /* Default alignment */
 }
 
 .marquee-container {
   overflow: hidden;
   background-color: transparent;
   padding: 40px 0;
-  margin-top: 0;
   position: relative;
   width: 100%;
 }
@@ -223,26 +252,28 @@ h1 {
 .marquee {
   display: flex;
   width: fit-content;
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite; /* Adjusted speed */
 }
 
 .marquee-group {
   display: flex;
-  gap: 20px;
-  padding-left: 30px;
+  gap: 30px; /* Increased gap */
+  padding: 0 30px; /* Padding for start/end of group */
   flex-shrink: 0;
 }
 
 .marquee-group img {
-  width: 400px;
-  height: 225px;
+  width: 450px; /* Slightly larger image size */
+  height: 250px; /* Maintain aspect ratio */
   object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  border-radius: 12px; /* Slightly larger border radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 .marquee-group img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03) translateY(-5px); /* Lift and scale slightly */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
 }
 
 @keyframes scroll {
@@ -265,7 +296,7 @@ h1 {
 .marquee.reverse {
   display: flex;
   width: max-content;
-  animation: scroll-left-to-right 25s linear infinite;
+  animation: scroll-left-to-right 30s linear infinite; /* Adjusted speed */
 }
 
 @keyframes scroll-left-to-right {
@@ -274,173 +305,214 @@ h1 {
 }
 
 .marquee-container.reverse .marquee-group img {
-  width: 400px;
-  height: 225px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  width: 450px;
+  height: 250px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+.marquee-container.reverse .marquee-group img:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Main Banner */
 .main-banner {
   width: 100%;
-  padding: 0 10px;
+  padding: 0 40px; /* Consistent padding */
   position: relative;
   overflow: hidden;
+  margin-top: 80px; /* Added margin-top for spacing */
 }
 
 .main-banner img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: 15px; /* Slightly larger border-radius */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Added shadow */
 }
 
 .banner-button {
   position: absolute;
-  bottom: 40px;
-  right: 130px;
-  padding: 12px 30px;
-  font-size: 1rem;
+  bottom: 50px; /* Adjusted position */
+  right: 80px; /* Adjusted position */
+  padding: 14px 35px; /* Matches main btn */
+  font-size: 1.15rem; /* Matches main btn */
   background: transparent;
-  border: 2px solid #800080;
-  border-radius: 8px;
+  border: 2px solid #800080; /* Purple border */
+  border-radius: 30px; /* Rounded corners */
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 10;
+  text-transform: uppercase;
 }
 
 .banner-button:hover {
   background: #800080;
   color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(128, 0, 128, 0.6); /* Purple shadow */
 }
 
 /* Cards */
 .cards-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center cards initially */
+  gap: 30px; /* Added gap */
   margin-top: 80px;
-  padding: 0 10px;
+  padding: 0 40px; /* Consistent padding */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
 }
 
 .card {
   background-color: transparent;
-  padding: 20px;
-  border-radius: 8px;
-  width: 30%;
+  padding: 25px; /* Slightly more padding */
+  border-radius: 12px; /* Consistent border-radius */
+  width: calc(33.33% - 20px); /* Adjust width to account for gap */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 280px; /* Ensure cards don't get too small before wrapping */
 }
 
 .card-image {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  height: 200px; /* Fixed height for consistent image size */
+  object-fit: cover; /* Ensure image covers the area */
+  border-radius: 10px;
+  margin-bottom: 20px; /* Increased margin */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Features */
-.features-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #fff;
-  padding-top: 60px;
-  padding-left: 80px;
+  transform: translateY(-12px); /* More pronounced lift */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  background-color: rgba(30, 30, 30, 0.5); /* Subtle background on hover */
 }
 
 /* Reviews */
+.reviews-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 60px 40px 30px;
+  text-align: left;
+}
+
 .marquee-wrapper {
   overflow: hidden;
   width: 100%;
   background-color: #111;
   padding: 40px 0;
   position: relative;
+  /* Use the same scroll animation for reviews, perhaps with different speed */
 }
 
 .reviews-container {
   display: flex;
   gap: 30px;
+  animation: scroll-loop 40s linear infinite; /* Slower loop for reviews */
+  width: fit-content; /* Ensure container is wide enough for animation */
+  padding: 0 40px; /* Padding for first/last card */
+}
+
+.marquee-wrapper:hover .reviews-container {
+  animation-play-state: paused;
 }
 
 .review-card {
   flex: 0 0 auto;
-  width: 250px;
+  min-width: 280px; /* Adjusted minimum width */
+  max-width: 320px; /* Adjusted maximum width */
   background-color: #1e1e1e;
   color: white;
-  padding: 20px;
+  padding: 25px; /* More padding */
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .review-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03) translateY(-8px); /* Lift and scale slightly */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* More pronounced shadow */
 }
 
 .review-card img {
-  width: 60px;
-  height: 60px;
+  width: 70px; /* Slightly larger image */
+  height: 70px; /* Slightly larger image */
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* More margin */
+  border: 3px solid #6a0dad; /* Purple border for profile pics */
 }
 
 .review-name {
-  font-size: 1rem;
+  font-size: 1.1rem; /* Slightly larger */
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .stars {
   color: gold;
-  margin-bottom: 10px;
-  font-size: 1rem;
+  margin-bottom: 12px;
+  font-size: 1.2rem; /* Slightly larger stars */
 }
 
 .review-text {
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.95rem; /* Slightly larger */
+  line-height: 1.5;
   color: #ccc;
-}
-
-@keyframes scroll-loop {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
 }
 
 /* Footer */
 .footer {
   background-color: #111;
   color: #fff;
-  padding: 60px 30px 20px;
+  padding: 80px 40px 30px; /* Increased padding */
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 50px; /* Increased gap */
   max-width: 1200px;
   margin: auto;
 }
 
+.footer-section {
+  flex: 1; /* Allow sections to grow */
+  min-width: 200px; /* Ensure minimum width before wrapping */
+}
+
 .footer-content h2,
 .footer-content h3 {
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Increased margin */
   font-weight: 600;
+  font-size: 1.4rem; /* Slightly larger heading */
 }
 
 .footer-content p,
 .footer-content ul li a {
   color: #ccc;
-  font-size: 14px;
+  font-size: 15px; /* Slightly larger font */
   line-height: 1.8;
   text-decoration: none;
 }
@@ -451,50 +523,151 @@ h1 {
 }
 
 .footer-links ul li {
-  margin-bottom: 10px;
+  margin-bottom: 12px; /* Increased margin */
 }
 
 .footer-social .social-icons a {
   color: #ccc;
-  font-size: 20px;
-  margin-right: 15px;
+  font-size: 22px; /* Slightly larger icons */
+  margin-right: 20px; /* Increased margin */
   transition: color 0.3s ease;
 }
 
 .footer-social .social-icons a:hover {
-  color: #fff;
+  color: #6a0dad; /* Purple hover */
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px; /* Increased margin */
   border-top: 1px solid #333;
-  padding-top: 15px;
-  font-size: 14px;
+  padding-top: 25px; /* Increased padding */
+  font-size: 15px; /* Slightly larger font */
   color: #777;
 }
 
 /* 📱 Responsive Styles */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 160px 40px 60px;
+  }
+
+  .left, .right {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .description {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .right img {
+    max-width: 80%;
+  }
+
+  .cards-container {
+    padding: 0 30px;
+    gap: 20px;
+  }
+
+  .card {
+    width: calc(50% - 15px); /* Two cards per row */
+  }
+
+  .footer-content {
+    gap: 30px;
+  }
+
+  .footer-section {
+    flex-basis: calc(50% - 15px); /* Two columns */
+  }
+}
+
+
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    padding: 15px 20px;
+    justify-content: space-between; /* Ensure logo and hamburger are spaced */
+  }
+
+  .navbar .logo img {
+    height: 80px; /* Adjust logo size for smaller screens */
+  }
+  .navbar.scrolled .logo img {
+    height: 60px;
   }
 
   .nav-right {
+    /* Hidden by default on mobile, managed by hamburger menu */
+    display: none;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 70%; /* Side menu width */
+    max-width: 300px; /* Max width for larger tablets */
+    height: 100%;
+    background-color: #1a1a1a; /* Dark background for menu */
+    padding: 80px 20px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease-in-out;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 40px;
+    z-index: 1050; /* Above regular content but below hamburger toggle */
+  }
+
+  body.nav-active .nav-right {
+    right: 0; /* Slide in */
+    display: flex; /* Make sure it's flex when active */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 25px; /* Spacing for menu items */
+    width: 100%;
+  }
+
+  .nav-links li a {
+    font-size: 1.3rem; /* Larger font for menu items */
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .social-icons {
+    font-size: 2rem;
+    margin-top: 30px; /* Space from nav links */
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  /* Overlay for active menu */
+  body.nav-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 1040;
   }
 
   .hero {
-    display: flex;
     flex-direction: column;
-    padding: 120px 30px 30px 30px;
+    padding: 120px 20px 40px; /* Adjust top padding for sticky navbar */
   }
-  
 
   .left {
     max-width: 100%;
@@ -502,95 +675,128 @@ h1 {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .description {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    max-width: 90%; /* Ensure text wraps well */
   }
 
   .btn {
-    font-size: 0.95rem;
-    padding: 10px 20px;
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+
+  .right {
+    margin-top: 30px; /* Space between text and image */
   }
 
   .right img {
-    width: 100%;
+    max-width: 95%; /* Adjust image size */
+  }
+
+  .projects-heading, .features-heading, .reviews-heading {
+    font-size: 2.2rem;
+    padding: 40px 20px 20px;
+    text-align: center; /* Center headings on mobile */
+  }
+
+  .marquee-group img,
+  .marquee-container.reverse .marquee-group img {
+    width: 350px; /* Smaller images for marquee */
+    height: 200px;
+  }
+
+  .main-banner {
+    padding: 0 20px;
+  }
+
+  .banner-button {
+    bottom: 25px; /* Adjusted position */
+    right: 25px; /* Adjusted position */
+    font-size: 0.9rem;
+    padding: 10px 20px;
   }
 
   .cards-container {
     flex-direction: column;
     align-items: center;
+    padding: 0 20px;
+    gap: 30px;
   }
 
   .card {
-    width: 90%;
-    margin-bottom: 20px;
+    width: 90%; /* Full width cards */
+    min-width: unset; /* Remove min-width constraint */
   }
 
-  .banner-button {
-    right: 20px;
-    bottom: 20px;
-    font-size: 0.9rem;
-    padding: 10px 20px;
+  .review-card {
+    min-width: 250px;
+    max-width: 280px;
   }
 
-  .marquee-group img,
-  .marquee-container.reverse .marquee-group img {
-    width: 300px;
-    height: 170px;
+  .footer {
+    padding: 60px 20px 20px;
   }
 
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-section {
+    width: 100%; /* Full width sections */
+    min-width: unset;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 100px 15px 30px;
+  }
+
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
   }
 
   .marquee-group img,
   .marquee-container.reverse .marquee-group img {
-    width: 250px;
-    height: 140px;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start; /* Changed from flex-end */
-    padding: 15px 20px;
+    width: 280px; /* Even smaller images */
+    height: 160px;
   }
 
-  .navbar .logo {
-    margin-bottom: 10px;
+  .banner-button {
+    font-size: 0.8rem;
+    padding: 8px 15px;
   }
 
-  .nav-right {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 15px;
-    margin-top: 10px;
+  .card {
+    padding: 20px;
   }
 
-  .navbar ul,
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
+  .review-card {
+    min-width: 220px;
+    max-width: 250px;
   }
 
-  .social-icons {
-    margin-top: 10px;
-    padding-left: 0;
-    margin-left: 0;
-    justify-content: flex-start;
+  .reviews-heading {
     font-size: 2rem;
-    gap: 15px;
   }
 }
