@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Designer Portfolio</title>
+  <title>Samad - Thumbnail Designer Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <!-- Optional: Add a favicon link here if you have a favicon.ico in your root directory -->
+  <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
+  <!-- Or for a PNG/SVG icon -->
+  <!-- <link rel="icon" type="image/png" href="/Images/my-icon.png"> -->
 </head>
 <body>
   <nav class="navbar">
-    <a href="#home" class="logo"> <!-- Logo moved inside navbar, added href for navigation -->
-      <img src="Images/ChatGPT_Image_Apr_21__2025__06_16_49_AM-removebg-preview.png" alt="My Logo" />
+    <a href="#home" class="logo" aria-label="Home - Samad's Portfolio">
+      <img src="Images/ChatGPT_Image_Apr_21__2025__06_16_49_AM-removebg-preview.png" alt="Samad's Logo" />
     </a>
-    <div class="hamburger-menu" id="hamburger"> <!-- Hamburger menu added -->
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <div class="nav-right"> <!-- nav-links and social-icons grouped -->
+    <button class="hamburger-menu" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -27,16 +30,16 @@
         <li><a href="Contact.html">Contacts</a></li>
       </ul>
       <div class="social-icons">
-        <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
         <a href="mailto:thumbnailsbysamad@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-envelope" aria-hidden="true"></i>
         </a>
       </div>
     </div>
   </nav>
-  
+
   <section id="home">
     <main class="hero">
       <div class="left">
@@ -45,10 +48,10 @@
         <p class="description">
           Hey there! I'm Samad, your go-to creative for jaw-dropping thumbnails and digital art. My designs grab attention and spark curiosity — let’s make your visuals pop!
         </p>
-        <button class="btn" onclick="document.querySelector('#projects').scrollIntoView({behavior: 'smooth'})">View My Projects</button>
+        <a href="#projects" class="btn">View My Projects</a>
       </div>
       <div class="right">
-        <img src="Images/IMG_20250419_221849-removebg-preview-Picsart-AiImageEnhancer.png" alt="Web Designer" />
+        <img src="Images/IMG_20250419_221849-removebg-preview-Picsart-AiImageEnhancer.png" alt="Web Designer demonstrating work" />
       </div>
     </main>
   </section>
@@ -57,59 +60,56 @@
   <section id="projects" class="marquee-container">
     <div class="marquee">
       <div class="marquee-group">
-        <img src="Images/Add a heading (15).png" alt="Thumbnail 1">
-        <img src="Images/Add a heading (24).png" alt="Thumbnail 2">
-        <img src="Images/Add a subheading.png" alt="Thumbnail 3">
-        <img src="Images/I Wasn't Ready for This….png" alt="Thumbnail 4">
-        <img src="Images/BALANCE.png" alt="Thumbnail 5">
-        <img src="Images/Add a heading (11).png" alt="Thumbnail 6">
-        <img src="Images/VS.png" alt="Thumbnail 7">
-        <img src="Images/Africa's Busiest Market (1).png" alt="Thumbnail 8">
+        <img src="Images/Add a heading (15).png" alt="Gaming Thumbnail">
+        <img src="Images/Add a heading (24).png" alt="Vlog Thumbnail">
+        <img src="Images/Add a subheading.png" alt="Challenge Thumbnail">
+        <img src="Images/I Wasn't Ready for This….png" alt="Reaction Thumbnail">
+        <img src="Images/BALANCE.png" alt="Lifestyle Thumbnail">
+        <img src="Images/Add a heading (11).png" alt="Tutorial Thumbnail">
+        <img src="Images/VS.png" alt="Comparison Thumbnail">
+        <img src="Images/Africa's Busiest Market (1).png" alt="Travel Thumbnail">
       </div>
       <div class="marquee-group">
-        <img src="Images/Add a heading (15).png" alt="Thumbnail 1">
-        <img src="Images/Add a heading (24).png" alt="Thumbnail 2">
-        <img src="Images/Add a subheading.png" alt="Thumbnail 3">
-        <img src="Images/I Wasn't Ready for This….png" alt="Thumbnail 4">
-        <img src="Images/BALANCE.png" alt="Thumbnail 5">
-        <img src="Images/Add a heading (11).png" alt="Thumbnail 6">
-        <img src="Images/VS.png" alt="Thumbnail 7">
-        <img src="Images/Africa's Busiest Market (1).png" alt="Thumbnail 8">
+        <img src="Images/Add a heading (15).png" alt="Gaming Thumbnail">
+        <img src="Images/Add a heading (24).png" alt="Vlog Thumbnail">
+        <img src="Images/Add a subheading.png" alt="Challenge Thumbnail">
+        <img src="Images/I Wasn't Ready for This….png" alt="Reaction Thumbnail">
+        <img src="Images/BALANCE.png" alt="Lifestyle Thumbnail">
+        <img src="Images/Add a heading (11).png" alt="Tutorial Thumbnail">
+        <img src="Images/VS.png" alt="Comparison Thumbnail">
+        <img src="Images/Africa's Busiest Market (1).png" alt="Travel Thumbnail">
       </div>
     </div>
-  </section> <!-- Close the first marquee container section here -->
+  </section>
 
-  <!-- This is now a separate div, not nested -->
   <div class="marquee-container reverse">
     <div class="marquee reverse">
       <div class="marquee-group">
-        <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
-        <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
-        <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
-        <img src="Images/DARK.png" alt="Thumbnail 10" />
-        <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
-        <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
-        <img src="Images/Worst.png" alt="Thumbnail 7" />
-        <img src="Images/Add a heading (27).png" alt="Thumbnail 8" />
+        <img src="Images/MUMBAI.png" alt="City Vlog Thumbnail" />
+        <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Abstract Design Thumbnail" />
+        <img src="Images/Crème Brûlée (1).png" alt="Food Review Thumbnail" />
+        <img src="Images/DARK.png" alt="Dark Themed Thumbnail" />
+        <img src="Images/Did NOT Expect This in India! (2).png" alt="Travel Experience Thumbnail" />
+        <img src="Images/Add a heading (11).png" alt="Creative Design Thumbnail" />
+        <img src="Images/Worst.png" alt="Worst Experience Thumbnail" />
+        <img src="Images/Add a heading (27).png" alt="Informative Thumbnail" />
       </div>
       <div class="marquee-group">
-        <img src="Images/MUMBAI.png" alt="Thumbnail 7" />
-        <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Thumbnail 8" />
-        <img src="Images/Crème Brûlée (1).png" alt="Thumbnail 9" />
-        <img src="Images/DARK.png" alt="Thumbnail 10" />
-        <img src="Images/Did NOT Expect This in India! (2).png" alt="Thumbnail 5" />
-        <img src="Images/Add a heading (11).png" alt="Thumbnail 6" />
-        <img src="Images/Worst.png" alt="Thumbnail 7" />
-        <img src="Images/Add a heading (27).png" alt="Thumbnail 8" />
+        <img src="Images/MUMBAI.png" alt="City Vlog Thumbnail" />
+        <img src="Images/64c711bc-5a8d-4af5-9e3b-a7be009a1e6f.png" alt="Abstract Design Thumbnail" />
+        <img src="Images/Crème Brûlée (1).png" alt="Food Review Thumbnail" />
+        <img src="Images/DARK.png" alt="Dark Themed Thumbnail" />
+        <img src="Images/Did NOT Expect This in India! (2).png" alt="Travel Experience Thumbnail" />
+        <img src="Images/Add a heading (11).png" alt="Creative Design Thumbnail" />
+        <img src="Images/Worst.png" alt="Worst Experience Thumbnail" />
+        <img src="Images/Add a heading (27).png" alt="Informative Thumbnail" />
       </div>
     </div>
   </div>
 
   <div class="main-banner">
-    <img src="Images/TRY A FREE SAMPLE.png" alt="Main Banner" />
-    <a href="Contact.html">
-      <button class="banner-button">GET NOW</button>
-    </a>
+    <img src="Images/TRY A FREE SAMPLE.png" alt="Call to action banner for free sample" />
+    <a href="Contact.html" class="banner-button">GET NOW</a>
   </div>
 
   <section id="services">
@@ -117,112 +117,111 @@
     <div class="cards-container">
       <div class="card">
         <img src="Images/Fast_Delivery__1_-removebg-preview.png" alt="Fast Delivery" class="card-image">
-        <!-- Optional: Add text content for card description, if needed -->
-        <!-- <h3>Fast Delivery</h3>
-        <p>Get your designs quickly and efficiently.</p> -->
+        <h3>Fast Delivery</h3>
+        <p>Your time is valuable. Get stunning thumbnails delivered promptly without compromising quality.</p>
       </div>
       <div class="card">
         <img src="Images/Fast_Delivery__2_-removebg-preview-removebg-preview.png" alt="Multiple Designs" class="card-image">
-        <!-- <h3>Multiple Designs</h3>
-        <p>Choose from a variety of creative options.</p> -->
+        <h3>Multiple Concepts</h3>
+        <p>Receive various creative options to choose from, ensuring your vision is perfectly met.</p>
       </div>
       <div class="card">
         <img src="Images/Fast_Delivery__3_-removebg-preview.png" alt="Changes Accepted" class="card-image">
-        <!-- <h3>Changes Accepted</h3>
-        <p>Your satisfaction is our priority, revisions welcome.</p> -->
+        <h3>Revisions Included</h3>
+        <p>Your satisfaction is paramount. We offer revisions to fine-tune designs until they're perfect for you.</p>
       </div>
     </div>
   </section>
 
-  <h2 class="reviews-heading">What Clients Say</h2> <!-- Class name updated -->
+  <h2 class="reviews-heading">What Clients Say</h2>
   <div class="marquee-wrapper">
-    <div class="marquee"> <!-- This div is crucial for the review marquee to scroll -->
+    <div class="marquee">
       <div class="reviews-container">
         <!-- Set of review cards -->
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Ava+Thompson&background=random" alt="Ava Thompson" />
           <h3 class="review-name">Ava Thompson</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Spot-on thumbnails. Boosted my views!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Liam+Patel&background=random" alt="Liam Patel" />
           <h3 class="review-name">Liam Patel</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Fast and fantastic designs!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Sophia+Nguyen&background=random" alt="Sophia Nguyen" />
           <h3 class="review-name">Sophia Nguyen</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Super crisp and professional work.</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Ethan+Garcia&background=random" alt="Ethan Garcia" />
           <h3 class="review-name">Ethan Garcia</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Creative, fast, and reliable!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Isabella+Martin&background=random" alt="Isabella Martin" />
           <h3 class="review-name">Isabella Martin</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Loved the quality of work. Great value!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Noah+Kim&background=random" alt="Noah Kim" />
           <h3 class="review-name">Noah Kim</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Uplifted my entire channel's look.</p>
         </div>
         <!-- Duplicate set for continuous scroll -->
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Ava+Thompson&background=random" alt="Ava Thompson" />
           <h3 class="review-name">Ava Thompson</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Spot-on thumbnails. Boosted my views!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Liam+Patel&background=random" alt="Liam Patel" />
           <h3 class="review-name">Liam Patel</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Fast and fantastic designs!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Sophia+Nguyen&background=random" alt="Sophia Nguyen" />
           <h3 class="review-name">Sophia Nguyen</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Super crisp and professional work.</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Ethan+Garcia&background=random" alt="Ethan Garcia" />
           <h3 class="review-name">Ethan Garcia</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Creative, fast, and reliable!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Isabella+Martin&background=random" alt="Isabella Martin" />
           <h3 class="review-name">Isabella Martin</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Loved the quality of work. Great value!</p>
         </div>
         <div class="review-card">
           <img src="https://ui-avatars.com/api/?name=Noah+Kim&background=random" alt="Noah Kim" />
           <h3 class="review-name">Noah Kim</h3>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="stars" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
           <p class="review-text">Uplifted my entire channel's look.</p>
         </div>
       </div>
     </div>
   </div>
-  
+
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-about footer-section">
         <h2>Samad</h2>
         <p>Creative Designer | Delivering eye-catching visuals fast & flawlessly.</p>
       </div>
-  
+
       <div class="footer-links footer-section">
         <h3>Quick Links</h3>
         <ul>
@@ -232,39 +231,43 @@
           <li><a href="Contact.html">Contact</a></li>
         </ul>
       </div>
-  
+
       <div class="footer-contact footer-section">
         <h3>Contact</h3>
-        <p>Email: thumbnailsbysamad@gmail.com</p>
+        <p>Email: <a href="mailto:thumbnailsbysamad@gmail.com">thumbnailsbysamad@gmail.com</a></p>
         <p>Location: Hyderabad, India</p>
       </div>
-  
+
       <div class="footer-social footer-section">
         <h3>Connect</h3>
         <div class="social-icons">
-          <a href="mailto:thumbnailsbysamad@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:thumbnailsbysamad@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
-  
+
     <div class="footer-bottom">
       <p>© 2025 thumbnailsbysamad. All rights reserved.</p>
     </div>
   </footer>
-  
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
         const hamburger = document.getElementById('hamburger');
         const body = document.body;
-        const navLinks = document.querySelectorAll('.nav-links li a'); // Select all nav links
-        const navSocialIcons = document.querySelector('.nav-right .social-icons').querySelectorAll('a'); // Select social icons only within nav-right
+        const navRight = document.querySelector('.nav-right'); // Get the entire nav-right container
+        const navLinks = navRight.querySelectorAll('.nav-links li a'); // Select all nav links within nav-right
+        const navSocialIcons = navRight.querySelectorAll('.social-icons a'); // Select social icons within nav-right
 
-        hamburger.addEventListener('click', function() {
+        function toggleNav() {
             body.classList.toggle('nav-active');
-        });
+        }
 
-        // Close menu when a nav link is clicked (for smoother navigation)
+        // Event listener for the hamburger menu click
+        hamburger.addEventListener('click', toggleNav);
+
+        // Close menu when a nav link is clicked (for smoother navigation on single page)
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (body.classList.contains('nav-active')) {
@@ -282,7 +285,17 @@
             });
         });
 
-        // Optional: Add/remove 'scrolled' class to navbar for sticky effect
+        // Optional: Close menu when clicking outside the menu on mobile (uses the overlay)
+        document.body.addEventListener('click', (event) => {
+            // Check if the body has 'nav-active' and the click is outside the nav-right and not on the hamburger button
+            if (body.classList.contains('nav-active') &&
+                !navRight.contains(event.target) && // Click is outside navRight
+                !hamburger.contains(event.target)) { // Click is outside hamburger
+                body.classList.remove('nav-active');
+            }
+        });
+
+        // Navbar Scroll Effect
         const navbar = document.querySelector('.navbar');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) { // Adjust scroll threshold as needed
