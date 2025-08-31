@@ -7,7 +7,7 @@ body {
 }
 
 .contact-page-content {
-  padding-top: 150px; /* Default for desktop */
+  padding-top: 160px; /* Default for desktop */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -435,4 +435,5 @@ body {
     font-size: 0.9rem;
     border-radius: 8px;
   }
+
 }
