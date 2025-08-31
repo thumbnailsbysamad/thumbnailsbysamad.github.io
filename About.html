@@ -3,185 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Samad | Thumbnail Designer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f8f5f2;
-      color: #1a1a1a;
-    }
-
-    .about-wrapper {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .intro-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .intro-header h1 {
-      font-size: 3.5rem;
-      font-weight: 900;
-    }
-
-    .intro-header p {
-      font-size: 1.2rem;
-      color: #444;
-      margin-top: 10px;
-    }
-
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .left-section, .right-section {
-      flex: 1 1 400px;
-    }
-
-    .left-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .signature {
-      font-family: 'Pacifico', cursive;
-      font-size: 2rem;
-      color: #a56c43;
-      margin: 20px 0;
-    }
-
-    .desc {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .skills {
-      margin-top: 20px;
-    }
-
-    .skills h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-    }
-
-    .skills ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skills li {
-      background: #e8e3df;
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-weight: 600;
-    }
-
-    .right-section img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: transparent;
-    }
-
-    .testimonial {
-      background-color: #fff;
-      border-left: 4px solid #a56c43;
-      margin-top: 30px;
-      padding: 20px;
-      border-radius: 10px;
-      font-style: italic;
-      font-size: 1.1rem;
-    }
-
-    .testimonial-by {
-      text-align: right;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .contact-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background-color: #a56c43;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 30px;
-      transition: background 0.3s ease;
-    }
-
-    .contact-btn:hover {
-      background-color: #8b5533;
-    }
-
-    @media (max-width: 768px) {
-      .about-content {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-      .skills ul {
-        justify-content: center;
-      }
-    }
-  </style>
+  <title>About - Samad | Creative Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <section class="about-wrapper">
-    <div class="intro-header">
-      <h1>Hey, I'm Samad</h1>
-      <p>A passionate Thumbnail Designer crafting scroll-stopping visuals for content creators</p>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Images/ChatGPT Image Aug 31, 2025, 10_04_26 PM.png" alt="My Logo" />
+      </a>
     </div>
+    <nav class="navbar">
+      <button class="hamburger-menu" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contacts</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:thumbnailsbysamad@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="about-content">
-      <div class="left-section">
-        <h2>I Love Bringing Ideas to Life</h2>
-        <p class="signature">Samad</p>
+  <main class="about-page-content">
+    <section class="about-hero">
+      <div class="about-intro-wrapper">
+        <p class="about-intro-tag">Hey there!</p>
+        <h1 class="about-main-heading">I'm Samad</h1>
+        <p class="about-tagline">A passionate Creator crafting compelling visuals and innovative digital solutions.</p>
+        <div class="about-hero-glow"></div>
+      </div>
+    </section>
 
-        <p class="desc">
-          As a dedicated Thumbnail Designer, I help YouTubers and digital creators make their videos pop with bold, click-worthy designs. From rapid delivery to tailored revisions — I’ve got your creative back.
-        </p>
-
-        <p class="desc">
-          Whether it's working with bold typography, vibrant imagery, or experimenting with layouts — I bring energy and clarity to every thumbnail I touch.
-        </p>
-
-        <div class="skills">
-          <h3>What I’m Good At:</h3>
-          <ul>
-            <li>Thumbnail Design</li>
-            <li>Photoshop</li>
-            <li>Canva Pro</li>
-            <li>Branding</li>
-            <li>Fast Delivery</li>
-            <li>Creative Direction</li>
-          </ul>
+    <section class="about-details-section">
+      <div class="about-container">
+        
+        <div class="about-content-card about-passion">
+          <h2>I Love Bringing Ideas to Life</h2>
+          <p class="about-description">
+            As a dedicated Creative Developer, I blend artistic vision with technical expertise. Whether it's crafting bold, click-worthy thumbnails, designing seamless user interfaces, or building robust digital solutions — I thrive on transforming concepts into impactful realities.
+          </p>
+          <p class="about-description">
+            My journey involves continuous learning and experimenting with new tools and techniques to ensure every project stands out. From rapid delivery to tailored revisions, I’m committed to delivering excellence.
+          </p>
         </div>
 
-        <a href="Contact.html" class="contact-btn">Let's Work Together</a>
+        <div class="about-content-card about-skills">
+          <h2>What I’m Good At:</h2>
+          <div class="skills-grid">
+            <span class="skill-pill">Thumbnail Design</span>
+            <span class="skill-pill">Photoshop</span>
+            <span class="skill-pill">Canva Pro</span>
+            <span class="skill-pill">UI/UX Principles</span>
+            <span class="skill-pill">Web Development</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Creative Direction</span>
+            <span class="skill-pill">Problem Solving</span>
+          </div>
+        </div>
+
+        <div class="about-content-card about-testimonial">
+          <p class="quote-text">
+            “ Samad’s designs helped boost our CTR by 30%! He totally gets what grabs attention and works fast. Highly recommend! ”
+          </p>
+          <p class="quote-author">— A Happy Client</p>
+        </div>
 
       </div>
+    </section>
 
-      <div class="right-section">
-        <img src="Images/IMG_20250419_221849-removebg-preview-Picsart-AiImageEnhancer.png" alt="Samad's photo" />
+    <section class="about-philosophy-section">
+      <div class="philosophy-wrapper">
+        <h2 class="section-heading philosophy-heading">My Philosophy</h2>
+        <div class="philosophy-content">
+          <p class="philosophy-text">
+            I believe that true innovation lies at the intersection of creativity and logic. Every project I undertake is approached with a dual mindset: how can we make it visually compelling and aesthetically pleasing, while simultaneously ensuring it's robust, efficient, and user-friendly?
+          </p>
+          <p class="philosophy-text">
+            My passion is to craft digital experiences that not only capture attention but also provide genuine value and solve real-world problems. I'm driven by continuous learning, adapting to new technologies, and a commitment to pixel-perfect execution.
+          </p>
+          <p class="philosophy-text">
+            It's not just about building; it's about building with purpose, style, and a touch of magic that leaves a lasting impression.
+          </p>
+        </div>
+        <div class="philosophy-icon-glow"><i class="fas fa-lightbulb"></i></div>
+      </div>
+    </section>
 
-        <div class="testimonial">
-          “ Samad’s designs helped boost our CTR by 30%! He totally gets what grabs attention and works fast. ”
-          <div class="testimonial-by">— A Happy Client</div>
+    <section class="about-contact-cta">
+      <h2 class="section-heading">Ready to Collaborate?</h2>
+      <a href="Contact.html" class="btn about-contact-btn">Let's Work Together</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-about">
+        <h2>Samad</h2>
+        <p>Creative Designer | Delivering eye-catching visuals fast & flawlessly.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact-info">
+        <h3>Contact</h3>
+        <p>Email: thumbnailsbysamad@gmail.com</p>
+        <p>Location: Hyderabad, India</p>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="mailto:thumbnailsbysamad@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.instagram.com/thumbnails.by.samad/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
-  </section>
+    <div class="footer-bottom">
+      <p>&copy; 2025 thumbnailsbysamad. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
